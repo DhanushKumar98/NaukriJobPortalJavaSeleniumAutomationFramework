@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-01-25T09:07:49 IST" name="Default suite" finished-at="2026-01-25T09:11:23 IST" duration-ms="214128">
+    <groups>
+    </groups>
+    <test started-at="2026-01-25T09:07:49 IST" name="Default test" finished-at="2026-01-25T09:11:23 IST" duration-ms="214128">
+      <class name="com.runnerTestNG.RunnerTestNGClass">
+        <test-method is-config="true" signature="extentReportStart()[pri:0, instance:com.runnerTestNG.RunnerTestNGClass@5c2375a9]" started-at="2026-01-25T09:07:49 IST" name="extentReportStart" finished-at="2026-01-25T09:07:49 IST" duration-ms="174" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- extentReportStart -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.runnerTestNG.RunnerTestNGClass@5c2375a9]" started-at="2026-01-25T09:07:49 IST" name="setUp" finished-at="2026-01-25T09:07:54 IST" duration-ms="4899" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="LoginPageTest()[pri:1, instance:com.runnerTestNG.RunnerTestNGClass@5c2375a9]" started-at="2026-01-25T09:07:54 IST" name="LoginPageTest" finished-at="2026-01-25T09:08:05 IST" duration-ms="10937" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginPageTest -->
+        <test-method signature="ProfileUpdateTest()[pri:2, instance:com.runnerTestNG.RunnerTestNGClass@5c2375a9]" started-at="2026-01-25T09:08:05 IST" name="ProfileUpdateTest" finished-at="2026-01-25T09:08:13 IST" duration-ms="7364" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ProfileUpdateTest -->
+        <test-method signature="basicDetailsTest()[pri:3, instance:com.runnerTestNG.RunnerTestNGClass@5c2375a9]" started-at="2026-01-25T09:08:13 IST" name="basicDetailsTest" finished-at="2026-01-25T09:08:41 IST" duration-ms="28590" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- basicDetailsTest -->
+        <test-method signature="resumeHeadlineTest()[pri:4, instance:com.runnerTestNG.RunnerTestNGClass@5c2375a9]" started-at="2026-01-25T09:08:42 IST" name="resumeHeadlineTest" finished-at="2026-01-25T09:08:56 IST" duration-ms="13971" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resumeHeadlineTest -->
+        <test-method signature="keySkillsTest()[pri:5, instance:com.runnerTestNG.RunnerTestNGClass@5c2375a9]" started-at="2026-01-25T09:08:56 IST" name="keySkillsTest" finished-at="2026-01-25T09:10:53 IST" duration-ms="117254" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- keySkillsTest -->
+        <test-method signature="profileSummaryTest()[pri:6, instance:com.runnerTestNG.RunnerTestNGClass@5c2375a9]" started-at="2026-01-25T09:10:53 IST" name="profileSummaryTest" finished-at="2026-01-25T09:11:15 IST" duration-ms="22155" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- profileSummaryTest -->
+        <test-method signature="uploadResumeTest()[pri:7, instance:com.runnerTestNG.RunnerTestNGClass@5c2375a9]" started-at="2026-01-25T09:11:15 IST" name="uploadResumeTest" finished-at="2026-01-25T09:11:23 IST" duration-ms="7189" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- uploadResumeTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.runnerTestNG.RunnerTestNGClass@5c2375a9]" started-at="2026-01-25T09:11:23 IST" name="tearDown" finished-at="2026-01-25T09:11:23 IST" duration-ms="420" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="extentReportEnd()[pri:0, instance:com.runnerTestNG.RunnerTestNGClass@5c2375a9]" started-at="2026-01-25T09:11:23 IST" name="extentReportEnd" finished-at="2026-01-25T09:11:25 IST" duration-ms="1964" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- extentReportEnd -->
+      </class> <!-- com.runnerTestNG.RunnerTestNGClass -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
