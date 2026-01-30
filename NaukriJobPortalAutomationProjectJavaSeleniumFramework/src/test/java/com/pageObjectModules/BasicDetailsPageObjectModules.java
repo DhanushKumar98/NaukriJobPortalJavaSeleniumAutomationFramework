@@ -11,7 +11,7 @@ import com.base.BaseClass;
 import com.interFaceElements.BasicDetailsPageInterfaceElements;
 import com.pageObjectManager.PageObjectManager;
 
-public class BasicDetailsPageObjectModules extends BaseClass implements BasicDetailsPageInterfaceElements {
+public class BasicDetailsPageObjectModules extends BaseClass implements BasicDetailsPageInterfaceElements{
 	
 	public BasicDetailsPageObjectModules() {
 		PageFactory.initElements(getDriver(), this);

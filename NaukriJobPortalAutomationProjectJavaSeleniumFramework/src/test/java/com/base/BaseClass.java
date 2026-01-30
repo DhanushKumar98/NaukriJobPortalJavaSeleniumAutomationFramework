@@ -1042,10 +1042,4 @@ public class BaseClass {
 	        Assert.fail("ERROR: Scroll failed", e);
 	    }
 	}
-	
-	
-	
-	
-	
-
 }
