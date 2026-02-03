@@ -40,19 +40,24 @@ public class RunnerTestNGClass extends BaseClass {
 	@Test(priority = 1)
 	public void LoginPageTest() {
 		ExtentReport_Test.extenttest = extentReports
-				.createTest("LOGIN - VALID CREDENTIALS", "NAUKRI WEB APPLICATION TEST : "
-						+ Thread.currentThread().getStackTrace()[1].getMethodName().toString()).assignCategory("REGRESSION").assignAuthor("DHANUSHKUMAR").assignDevice("chrome")
+				.createTest("LOGIN - VALID CREDENTIALS",
+						"NAUKRI WEB APPLICATION TEST : "
+								+ Thread.currentThread().getStackTrace()[1].getMethodName().toString())
+				.assignCategory("REGRESSION").assignAuthor("DHANUSHKUMAR").assignDevice("chrome")
 				.info("VERIFY USER CAN UPDATE PROFILE SUMMARY SUCCESSFULLY");
-		ExtentReport_Test.extenttest.info("User enter username : "+ pageObjectManager.getFileReaderManager().getDataProperty("username"));
+		ExtentReport_Test.extenttest
+				.info("User enter username : " + pageObjectManager.getFileReaderManager().getDataProperty("username"));
 		pageObjectManager.getLoginPageModule().setUsername();
-		ExtentReport_Test.extenttest.info("User enter Password : "+ pageObjectManager.getFileReaderManager().getDataProperty("password"));
+		ExtentReport_Test.extenttest
+				.info("User enter Password : " + pageObjectManager.getFileReaderManager().getDataProperty("password"));
 		pageObjectManager.getLoginPageModule().setPassword();
-		ExtentReport_Test.extenttest.info("User Click on Show Password Button : "+ pageObjectManager.getFileReaderManager().getDataProperty("password"));
+		ExtentReport_Test.extenttest.info("User Click on Show Password Button : "
+				+ pageObjectManager.getFileReaderManager().getDataProperty("password"));
 		pageObjectManager.getLoginPageModule().clickOnShowPassword();
 		ExtentReport_Test.extenttest.info("User Click on Login Button.");
 		pageObjectManager.getLoginPageModule().clickOnLoginBtn();
 		ExtentReport_Test.extenttest.pass("Login Test Successfully");
-		localWait(5000);
+		localWait(3000);
 	}
 
 //	@Test(priority = -1)
@@ -72,62 +77,77 @@ public class RunnerTestNGClass extends BaseClass {
 	@Test(priority = 2)
 	public void ProfileUpdateTest() {
 		ExtentReport_Test.extenttest = extentReports
-				.createTest("PROFILE UPDATE MODULE","NAUKRI WEB APPLICATION TEST : "
-						+ Thread.currentThread().getStackTrace()[1].getMethodName().toString()).assignCategory("REGRESSION").assignAuthor("DHANUSH KUMAR").assignDevice("chrome")
+				.createTest("PROFILE UPDATE MODULE",
+						"NAUKRI WEB APPLICATION TEST : "
+								+ Thread.currentThread().getStackTrace()[1].getMethodName().toString())
+				.assignCategory("REGRESSION").assignAuthor("DHANUSH KUMAR").assignDevice("chrome")
 				.info("VERIFY THE USER CAN UPDATE PROFILE TEST");
 		ExtentReport_Test.extenttest.info("User Should click on Naukri Profile Button");
 		pageObjectManager.getProfileUpdatePageModule().clickOnProfile();
 		ExtentReport_Test.extenttest.info("User Should click on Naukri View and Update Profile Button");
 		pageObjectManager.getProfileUpdatePageModule().clickOnViewAnUpdateProfile();
 		ExtentReport_Test.extenttest.pass("PROFILE Updated Successfully");
-		localWait(5000);	
-	} 
+		localWait(3000);
+	}
 
 	@Test(priority = 3)
 	public void basicDetailsTest() {
 		ExtentReport_Test.extenttest = extentReports
-				.createTest("BASIC DETAILS MODULE","NAUKRI WEB APPLICATION TEST : "
-						+ Thread.currentThread().getStackTrace()[1].getMethodName().toString()).assignCategory("REGRESSION").assignAuthor("DHANUSH KUMAR").assignDevice("chrome")
+				.createTest("BASIC DETAILS MODULE",
+						"NAUKRI WEB APPLICATION TEST : "
+								+ Thread.currentThread().getStackTrace()[1].getMethodName().toString())
+				.assignCategory("REGRESSION").assignAuthor("DHANUSH KUMAR").assignDevice("chrome")
 				.info("VERIFY THE USER ENTER BASIC DETAILS TEST");
 		ExtentReport_Test.extenttest.info("User Click on Basic Details Edit Button");
 		pageObjectManager.getBasicDetailsPageModule().clickOnEditBtn();
-		ExtentReport_Test.extenttest.info("User Should Enter Name on NameTextFiled : "+pageObjectManager.getFileReaderManager().getDataProperty("name"));
+		ExtentReport_Test.extenttest.info("User Should Enter Name on NameTextFiled : "
+				+ pageObjectManager.getFileReaderManager().getDataProperty("name"));
 		pageObjectManager.getBasicDetailsPageModule().enterName();
-		ExtentReport_Test.extenttest.info("User Should Enter Total Work Expericence : "+pageObjectManager.getFileReaderManager().getDataProperty("year")+" "+pageObjectManager.getFileReaderManager().getDataProperty("month"));
+		ExtentReport_Test.extenttest.info("User Should Enter Total Work Expericence : "
+				+ pageObjectManager.getFileReaderManager().getDataProperty("year") + " "
+				+ pageObjectManager.getFileReaderManager().getDataProperty("month"));
 		pageObjectManager.getBasicDetailsPageModule().totalExperience();
-		ExtentReport_Test.extenttest.info("User Should Enter Current Salary : "+pageObjectManager.getFileReaderManager().getDataProperty("currentSalary"));
+		ExtentReport_Test.extenttest.info("User Should Enter Current Salary : "
+				+ pageObjectManager.getFileReaderManager().getDataProperty("currentSalary"));
 		pageObjectManager.getBasicDetailsPageModule().currentSalary();
-		ExtentReport_Test.extenttest.info("User Should Enter SalarBreakDown : "+pageObjectManager.getFileReaderManager().getDataProperty("salarybreakdown"));
+		ExtentReport_Test.extenttest.info("User Should Enter SalarBreakDown : "
+				+ pageObjectManager.getFileReaderManager().getDataProperty("salarybreakdown"));
 		pageObjectManager.getBasicDetailsPageModule().salaryBreakdown();
-		ExtentReport_Test.extenttest.info("User Should Enter Current Location : "+pageObjectManager.getFileReaderManager().getDataProperty("city")+" "+","+pageObjectManager.getFileReaderManager().getDataProperty("state"));
+		ExtentReport_Test.extenttest.info("User Should Enter Current Location : "
+				+ pageObjectManager.getFileReaderManager().getDataProperty("city") + " " + ","
+				+ pageObjectManager.getFileReaderManager().getDataProperty("state"));
 		pageObjectManager.getBasicDetailsPageModule().CurrentLocation();
 		ExtentReport_Test.extenttest.info("User Should Select Notice Period");
 		pageObjectManager.getBasicDetailsPageModule().noticePeriod();
 		ExtentReport_Test.extenttest.info("User Should Click on Save Button");
 		pageObjectManager.getBasicDetailsPageModule().clickOnSaveBtn();
 		ExtentReport_Test.extenttest.pass("BASIC DETAILS Updated Successfully");
-		localWait(5000);	
+		localWait(1000);
 	}
-	
+
 	@Test(priority = 4)
 	public void resumeHeadlineTest() {
 		ExtentReport_Test.extenttest = extentReports
-				.createTest("RESUME HEADLINE MODULE"+"NAUKRI WEB APPLICATION TEST : "+ Thread.currentThread().getStackTrace()[1].toString()).assignCategory("REGRESSION").assignAuthor("DHANUSH KUMAR").assignDevice("chrome")
+				.createTest("RESUME HEADLINE MODULE" + "NAUKRI WEB APPLICATION TEST : "
+						+ Thread.currentThread().getStackTrace()[1].toString())
+				.assignCategory("REGRESSION").assignAuthor("DHANUSH KUMAR").assignDevice("chrome")
 				.info("VERIFY THE RESUME HEADLINE TEST");
 		ExtentReport_Test.extenttest.info("User Should Click on Edit Resume Headline Button");
 		pageObjectManager.getResumeheadlinePageModule().clickOnEditResumeHeaddlineBtn();
 		ExtentReport_Test.extenttest.info("User Should Fill the Resume Headline");
 		pageObjectManager.getResumeheadlinePageModule().fillResumeHeadlineTextField();
 		ExtentReport_Test.extenttest.info("User Should Click on Save Button");
-		pageObjectManager.getResumeheadlinePageModule().clickOnSaveBtn();	
+		pageObjectManager.getResumeheadlinePageModule().clickOnSaveBtn();
 		ExtentReport_Test.extenttest.pass("RESUME HEADLINE Updated Successfully");
-		localWait(5000);	
+		localWait(1000);
 	}
 
 	@Test(priority = 5)
 	public void keySkillsTest() {
 		ExtentReport_Test.extenttest = extentReports
-				.createTest("KEY SKILLS MODULE"+"NAUKRI WEB APPLICATION TEST : "+ Thread.currentThread().getStackTrace()[1].getMethodName().toString()).assignCategory("REGRESSION").assignAuthor("DHANUSH KUMAR").assignDevice("chrome")
+				.createTest("KEY SKILLS MODULE" + "NAUKRI WEB APPLICATION TEST : "
+						+ Thread.currentThread().getStackTrace()[1].getMethodName().toString())
+				.assignCategory("REGRESSION").assignAuthor("DHANUSH KUMAR").assignDevice("chrome")
 				.info("VERIFY THE KEY SKILLS TEST");
 		ExtentReport_Test.extenttest.info("User Should Click on Edit Key Skills Button");
 		pageObjectManager.getKeySkillsPageModule().clickOnEditKeySkillsBtn();
@@ -138,13 +158,15 @@ public class RunnerTestNGClass extends BaseClass {
 		ExtentReport_Test.extenttest.info("User Should Click on Save Button");
 		pageObjectManager.getKeySkillsPageModule().clickOnSaveBtn();
 		ExtentReport_Test.extenttest.pass("KEY SKILLS Updated Successfully");
-		localWait(5000);
+		localWait(1000);
 	}
-	
+
 	@Test(priority = 6)
 	public void profileSummaryTest() {
 		ExtentReport_Test.extenttest = extentReports
-				.createTest("PROFILE SUMMARY MODULE"+"NAUKRI WEB APPLICATION TEST : "+ Thread.currentThread().getStackTrace()[1].getMethodName().toString()).assignCategory("REGRESSION").assignAuthor("DHANUSH KUMAR").assignDevice("chrome")
+				.createTest("PROFILE SUMMARY MODULE" + "NAUKRI WEB APPLICATION TEST : "
+						+ Thread.currentThread().getStackTrace()[1].getMethodName().toString())
+				.assignCategory("REGRESSION").assignAuthor("DHANUSH KUMAR").assignDevice("chrome")
 				.info("VERIFY THE PROFILE SUMMARY TEST");
 		ExtentReport_Test.extenttest.info("User Should Click on Edit Profile Summary Button");
 		pageObjectManager.getProfileSummaryPageModule().clickOnEditBtn();
@@ -153,29 +175,27 @@ public class RunnerTestNGClass extends BaseClass {
 		ExtentReport_Test.extenttest.info("User Should Click on Save Button");
 		pageObjectManager.getProfileSummaryPageModule().clickOnSaveBtn();
 		ExtentReport_Test.extenttest.pass("PROFILE SUMMARY Updated Successfully");
-		localWait(2000);	
+		localWait(1000);
 	}
-	
+
 	@Test(priority = 7)
 	public void uploadResumeTest() {
 		ExtentReport_Test.extenttest = extentReports
-				.createTest("UPLOAD RESUME MODULE" + "NAUKRI WEB APPLICATION TEST : "+ Thread.currentThread().getStackTrace()[1].getMethodName().toString()).assignCategory("REGRESSION").assignAuthor("DHANUSH KUMAR").assignDevice("chrome")
+				.createTest("UPLOAD RESUME MODULE" + "NAUKRI WEB APPLICATION TEST : "
+						+ Thread.currentThread().getStackTrace()[1].getMethodName().toString())
+				.assignCategory("REGRESSION").assignAuthor("DHANUSH KUMAR").assignDevice("chrome")
 				.info("VERIFY THE UPLOAD RESUME TEST");
 		ExtentReport_Test.extenttest.info("User Should click on Resume Section");
 		pageObjectManager.getUploadResumePageModule().clickOnResume();
+		ExtentReport_Test.extenttest.info("User Should click on Delete Resume button.");
+		pageObjectManager.getUploadResumePageModule().deleteExistingResume();
+		localWait(2000);
 		ExtentReport_Test.extenttest.info("User Should Upload File Path or Resume File Path");
 		pageObjectManager.getUploadResumePageModule().uploadResumeBtn();
 		ExtentReport_Test.extenttest.info("RESUME UPLOADED SUCCESSFULLY");
+		localWait(2000);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	@AfterTest
 	public void tearDown() {
 		terminateBrowser();

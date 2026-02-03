@@ -317,10 +317,9 @@ public class BaseClass {
 			Assert.fail("ERROR : OCCURS DURING JAVASCRIPT CLICK");
 		}
 	}
-	
+
 	public static void scrollDownToLoadLazyContent() {
-	    ((JavascriptExecutor) getDriver())
-	        .executeScript("window.scrollBy(0,800);");
+		((JavascriptExecutor) getDriver()).executeScript("window.scrollBy(0,800);");
 	}
 
 	protected static void typeJS(WebElement element, String text) {
@@ -822,31 +821,29 @@ public class BaseClass {
 
 	protected static void scrollByElement(WebElement element) {
 		try {
-			
+
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].scrollIntoView({behavior:'smooth', block:'center'});", element);
 		} catch (Exception e) {
 			Assert.fail("ERROR: Unable to scroll to element");
 		}
 	}
-	
+
 	public static void click(WebElement element) {
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-	    WebElement elements = wait.until(ExpectedConditions.elementToBeClickable(element));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		WebElement elements = wait.until(ExpectedConditions.elementToBeClickable(element));
 
-	    ((JavascriptExecutor) driver)
-	        .executeScript("arguments[0].scrollIntoView({block:'center'});", elements);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block:'center'});", elements);
 
-	    elements.click();
+		elements.click();
 	}
-	
+
 	public static void scrollToElement(WebElement element) {
-	    try {
-	        ((JavascriptExecutor) driver)
-	                .executeScript("arguments[0].scrollIntoView(true);", element);
-	    } catch (Exception e) {
-	        throw new RuntimeException("ERROR: Unable to scroll to element", e);
-	    }
+		try {
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		} catch (Exception e) {
+			throw new RuntimeException("ERROR: Unable to scroll to element", e);
+		}
 	}
 
 	// ----------- Robot Class Reusable Methods-------------
@@ -963,83 +960,121 @@ public class BaseClass {
 		js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollTop = arguments[0].scrollHeight;", element);
 	}
-	
+
 	protected static void clickAndBackspace(WebElement element) {
 		try {
 			element.click();
 			element.sendKeys(Keys.BACK_SPACE);
-		}catch(Exception e) {
+		} catch (Exception e) {
 			Assert.fail("ERROR : OCCURS DURING BACKSPACE");
 		}
 	}
-	
-	protected static void pressKeyMultipleTimes(Keys key,int times) {
+
+	protected static void pressKeyMultipleTimes(Keys key, int times) {
 		try {
-			for(int i = 0;i< times ;i++) {
+			for (int i = 0; i < times; i++) {
 				getDriver().switchTo().activeElement().sendKeys(key);
 				localWait(1000);
 			}
-		}catch(Exception e) {
+		} catch (Exception e) {
 			Assert.fail("ERROR : OCCURS DURING PRESS KEY MULTIPLE TIMES");
 		}
 	}
-	
-	// How to Use 
-	
+
+	// How to Use
+
 //	usernameField.click();
 //	pressKeyMultipleTimes(Keys.BACK_SPACE, 8);
-	
+
 //	This works for:
 //
 //		Keys.ENTER
 //		Keys.TAB
 //		Keys.DELETE
 //		Keys.BACK_SPACE
-	
+
 	public static void clearField(WebElement element) {
 		explicitWaitVisibilityOfElement(element, 10);
 		scrollByElement(element);
 		explicitWaitElementToBeClickable(element, 10);
-	    element.click();
-	    element.sendKeys(Keys.chord(Keys.CONTROL, "a"));
-	    element.sendKeys(Keys.BACK_SPACE);
+		element.click();
+		element.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+		element.sendKeys(Keys.BACK_SPACE);
 	}
-	
+
 //	Fast
 //	✔ Reliable
 //	✔ Minimal looping
-	
-	
-	protected static void sendKeys(WebElement element,List<String> values) {
+
+	protected static void sendKeys(WebElement element, List<String> values) {
 		try {
 			element.click();
 			element.clear();
-			for(String value : values) {
+			for (String value : values) {
 				element.sendKeys(value);
 				localWait(3000);
 				pressKey(KeyEvent.VK_TAB);
 			}
-		}catch(Exception e) {
+		} catch (Exception e) {
 			Assert.fail("ERROR : OCCURS DURING SENDING LIST OF STRING VALUES");
 		}
 	}
-	
+
 	public static void scrollDownPage() {
-	    ((JavascriptExecutor) driver)
-	            .executeScript("window.scrollBy(0,1500);");
+		((JavascriptExecutor) driver).executeScript("window.scrollBy(0,1500);");
 	}
-	
+
 	public static void scrollAndHighlight(WebElement element) {
-	    try {
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	        wait.until(ExpectedConditions.visibilityOf(element));
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.visibilityOf(element));
 
-	        JavascriptExecutor js = (JavascriptExecutor) driver;
-	        js.executeScript("arguments[0].scrollIntoView({block:'center'});", element);
-	        js.executeScript("arguments[0].style.border='2px solid red'", element);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({block:'center'});", element);
+			js.executeScript("arguments[0].style.border='2px solid red'", element);
 
-	    } catch (Exception e) {
-	        Assert.fail("ERROR: Scroll failed", e);
+		} catch (Exception e) {
+			Assert.fail("ERROR: Scroll failed", e);
+		}
+	}
+
+	public void clickActionButton(String action, WebElement element) {
+
+	    switch (action.toLowerCase()) {
+
+	        case "Delete":
+	        case "Upload resume":
+	        case "result":
+	           clickSelenium(element);
+	            break;
+
+	        default:
+	            Assert.fail("Invalid action: " + action);
 	    }
 	}
+	
+	public void clickActionButtons(String action, WebElement element) {
+
+	    if (action == null || element == null) {
+	        return;
+	    }
+
+	    switch (action.toLowerCase()) {
+
+	        case "deleteOneTheme":
+	        case "Upload resume":
+	        case "result":
+	          clickSelenium(element);
+	            break;
+
+	        default:
+	            // intentionally skipped
+	    }
+	}
+	
+	
+	
+	
+	
+
 }
